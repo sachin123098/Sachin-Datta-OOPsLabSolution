@@ -5,7 +5,7 @@ import com.gl.ITSupportAdministrator.pojo.Employee;
 public class Services {
 	
 	public char[] generatePassword() {
-		String capitalLetters="abcdefghijklmnopqrstuvwxyz";
+		String capitalLetters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		String smallLetters="abcdefghijklmnopqrstuvwxyz";
 		String Numbers="0123456789";
 		String specialCharecters="!@#$%^&*()_+{}][.,?><" ;
