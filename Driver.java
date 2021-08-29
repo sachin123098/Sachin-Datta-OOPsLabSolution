@@ -4,9 +4,9 @@ import  com.gl.ITSupportAdministrator.pojo.Employee;
 import com.gl.ITSupportAdministrator.Services.Services;
 
 public class Driver {
+	public static String department = null;
 
 	public static void main(String[] args) {
-		String department = null;
 		Employee employee=new Employee("sachin","datta");
 		System.out.println("Please Enter The Department from the following: ");
 		System.out.println("1. Technical");
@@ -19,9 +19,7 @@ public class Driver {
 		Services service=new Services();
 		
 		switch(option) {
-		case 0:
-			System.out.println("Invalid option");
-			break;
+		
 		case 1:
 			department="Technical";
 			break;
@@ -38,12 +36,16 @@ public class Driver {
 			department="Legal";
 			break;
 			
+		default:
+			System.out.println("invalid option");
+				
+			if (option==1 || option==2 || option==3 ||option==4) {
+				System.out.println("Dear "+employee.getfirstName() + " Your generated credentials are as follows " );
+				System.out.println("Email --> "+service.generateEmail(employee,department));
+				char[] password1=service.generatePassword();
+				System.out.println("Password --> 1"+password1);
+			}
 		}
-		System.out.println("Dear "+employee.getfirstName() + " Your generated credentials are as follows " );
-		System.out.println("Email --> "+service.generateEmail(employee,department));
-		char[] password1=service.generatePassword();
-		System.out.println("Password --> 1"+password1);
-		
 	}
 	}
 
